@@ -1,5 +1,5 @@
 module.exports = {
-  title: '林夕梦木子李',
+  title: '林夕梦2木子李',
   description: '前端学习',
   // 注入到当前页面的 HTML <head> 中的标签
   base: '/BLOG/', // 这是部署到github相关的配置 下面会讲
