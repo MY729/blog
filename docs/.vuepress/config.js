@@ -1,6 +1,9 @@
 module.exports = {
   title: '林夕梦木子李',
   description: '前端学习',
+  head: [
+    ['link', { rel: 'icon', href: `/img/logo.ico` }]
+  ],
   // 注入到当前页面的 HTML <head> 中的标签
   base: '/BLOG/', // 这是部署到github相关的配置 下面会讲
   markdown: {
@@ -8,6 +11,7 @@ module.exports = {
   },
   // 侧边栏
   themeConfig: {
+    logo: '/img/header.png',
     // 导航栏
     sidebarDepth: 1, // 为2 则将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
     lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
