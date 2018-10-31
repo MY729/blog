@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /img/header.png
-actionText: 开始1阅读 →
+actionText: 开始阅读 →
 actionLink: /accumulate/
 features:
 - title: 简洁至上
