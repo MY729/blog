@@ -1,9 +1,14 @@
 {
+<<<<<<< HEAD
   "name": "blog",
+=======
+  "name": "BLOG",
+>>>>>>> 618e50edb5dcf6ad5d676adfc5b9ca653322abf2
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "deploy": "bash deploy.sh"
@@ -11,4 +16,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
+=======
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
+  }
+>>>>>>> 618e50edb5dcf6ad5d676adfc5b9ca653322abf2
 }
