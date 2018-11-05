@@ -1,6 +1,6 @@
 module.exports = {
   title: '林夕梦木子李',
-  description: '前端学习',
+  description: '我有一只小毛驴呀~我从来也不骑~~',
   head: [
     ['link', { rel: 'icon', href: `/img/logo.ico` }]
   ],
@@ -75,6 +75,10 @@ module.exports = {
           '/algorithm/',
           '单例模式',
           '在二维数组中查找'
+        ],
+        '/interview/': [
+          'vue相关',
+          '/interview/',
         ]
     }
   }

@@ -7,3 +7,6 @@
 
 ## 工具类
 * [JSON在线编辑器](https://www.qqe2.com/)
+
+## 软件类
+* [录屏转动图](https://github.com/MY729/blog/raw/gh-pages/tools/GifCam.zip)

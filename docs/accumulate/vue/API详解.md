@@ -43,10 +43,9 @@ export default {
 }
 </script>
 ```
+![An image](https://github.com/MY729/blog/raw/gh-pages/img/api详解/api-1.gif)
 在用户名的输入框输入内容，点击切换为邮箱登录，内容不会被清空，显然这是不合理的
-![An image](https://github.com/MY729/blog/raw/gh-pages/img/api详解/api-1.png)
-![An image](https://github.com/MY729/blog/raw/gh-pages/img/api详解/api-2.png)
 
-此时为复用的输入框加上key值就可以避免这样的清空
+此时为复用的输入框加上key值就可以避免这样的情况
 
 建议尽可能在使用 v-for 时提供 key，除非遍历输出的 DOM 内容非常简单，或者是刻意依赖默认行为以获取性能上的提升
