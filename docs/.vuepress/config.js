@@ -52,7 +52,6 @@ module.exports = {
             children: [
               '/accumulate/ES6/数组常用方法',
               '/accumulate/ES6/ES7 特性',
-              '/accumulate/ES6/test',
             ]
           },
           {
@@ -60,6 +59,13 @@ module.exports = {
             collapsable: false,
             children: [
               '/accumulate/vuex/vuex基础实践',
+            ]
+          },
+          {
+            title: 'vue',
+            collapsable: false,
+            children: [
+              '/accumulate/vue/API详解'
             ]
           },
           '/accumulate/', // accumulate文件夹的README.md 不是下拉框形式
