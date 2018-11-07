@@ -1,4 +1,4 @@
-# vue相关
+# vue 部分
 
 ## computed 和 watch 实现原理
 
@@ -35,3 +35,84 @@ vue数据双向绑定是通过数据劫持结合发布者-订阅者模式的方�
 
   3. 一个解析器Compile，可以扫描和解析每个节点的相关指令（v-model，v-on等指令），如果节点存在v-model，v-on等指令，则解析器Compile初始化这类节点的模板数据，使之可以显示在视图上，然后初始化相应的订阅者（Watcher）。
 :::
+
+## vue数组/对象的更新检测
+
+::: danger 重要
+Vue不能检测到对象的添加或者删除。Vue在初始化实例时就对属性执行了setter/getter转化过程，所以属性必须开始就在对象上，这样才能让Vue转化它
+:::
+
+vue检测数据（数组）变动靠的是`setter`和`getter`这两个属性，而这两个属性，使用了js原生的`Object.defineProperty()`,第一个实现`Object.defineProperty`方法的浏览器是IE8，这也是为什么vuejs不支持ie8以下的原因
+
+### 数组更新检测
+
+Vue 包含一组观察数组的变异方法，它们也将会触发视图更新:
+```javascript
+push()
+pop()
+shift()
+unshift()
+splice()
+sort()
+reverse()
+```
+由于JavaScript 的限制，vue不能检测到下面数组的变化：
+
+  1. 直接用索引设置元素，如 vm.items[0] = {}
+  2. 修改数据的长度，如 vm.items.length = 0
+
+
+为了解决数组变化的第一类问题，以下两种方式都可以实现：
+```javascript
+// Vue.set
+Vue.set(vm.items, indexOfItem, newValue)
+
+// Array.prototype.splice
+vm.items.splice(indexOfItem, 1, newValue)
+```
+也可以使用 vm.$set 实例方法，该方法是全局方法 Vue.set 的一个别名：
+
+    vm.$set(vm.items, indexOfItem, newValue)
+
+为了解决数组变化的第二类问题，你可以使用 splice：
+
+    vm.items.splice(newLength)
+
+### 对象更新检测
+
+由于JavaScript 的限制，Vue不能检测到对象的添加或者删除
+
+对于已经创建的实例，Vue 不能动态添加根级别的响应式属性。
+
+但是，可以使用 `Vue.set(object, key, value)` 方法向嵌套对象添加响应式属性。例如，对于：
+```javascript
+var vm = new Vue({
+  data: {
+    userProfile: {
+      name: 'Anika'
+    }
+  }
+})
+```
+你可以添加一个新的 `age` 属性到嵌套的 `userProfile` 对象：
+
+    Vue.set(vm.userProfile, 'age', 27)
+
+你还可以使用 `vm.$set` 实例方法，它只是全局 `Vue.set` 的别名：
+
+    vm.$set(vm.userProfile, 'age', 27)
+
+有时可能需要为已有对象赋予多个新属性，比如使用` Object.assign()`。在这种情况下，应该用两个对象的属性创建一个新的对象。所以，如果想添加新的响应式属性，不要像这样
+```javascript
+Object.assign(vm.userProfile, {
+  age: 27,
+  favoriteColor: 'Vue Green'
+})
+```
+应该这样：
+```javascript
+vm.userProfile = Object.assign({}, vm.userProfile, {
+  age: 27,
+  favoriteColor: 'Vue Green'
+})
+```
