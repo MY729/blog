@@ -36,6 +36,7 @@ module.exports = {
     sidebar: {
       // 前端学习  docs文件夹下面的accumulate文件夹 文档中md文件 书写的位置(命名随意)
       '/accumulate/': [
+        '/accumulate/', // accumulate文件夹的README.md 不是下拉框形式
         {
           title: 'JavaScript',
           collapsable: false,
@@ -69,7 +70,6 @@ module.exports = {
             '/accumulate/vue/API详解'
           ]
         },
-        '/accumulate/', // accumulate文件夹的README.md 不是下拉框形式
       ],
       // 算法 docs文件夹下面的algorithm文件夹 这是第二组侧边栏 跟第一组侧边栏没关系
       '/algorithm/': [
@@ -79,21 +79,22 @@ module.exports = {
       ],
       // 面试
       '/interview/': [
+        '/interview/',
         'vue相关',
         'html相关',
         '网络相关',
-        '/interview/',
       ],
       // 网络
       '/internetwork/': [
+        '/internetwork/',
         'http请求和响应报文结构',
         'HTTP请求方法详解',
-        '/internetwork/',
+        'TCP三次握手',
       ],
       // 文章
       '/article/': [
-        'markdown语法详解',
         '/article/',
+        'markdown语法详解',
       ]
     }
   }
