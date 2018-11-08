@@ -49,3 +49,42 @@ export default {
 此时为复用的输入框加上唯一的值key属性，就可以在每次切换登录方式的时候，输入框都将被重新渲染
 
 建议尽可能在使用 v-for 时提供 key，除非遍历输出的 DOM 内容非常简单，或者是刻意依赖默认行为以获取性能上的提升
+
+
+## 修饰符
+
+### .lazy
+
+  默认情况下，`v-model`在input事件中同步输入框的值和数据，可以通过添加修饰符.lazy转变为在change事件中同步  
+  也就是在失去焦点 或者 按下回车键时才更新**
+
+  <font>注意：如果使用elementUI组件的`el-input`，则此修饰符不起作用</font>
+
+``` vue
+<template>
+  <div class="fan">
+    输入的值： {{msg}} <br><br>
+    elementUI组件：<br>
+    <el-input v-model.lazy="msg"></el-input>
+    原生input添加修饰符: <input v-model.lazy="msg" /> <br><br>
+    原生input不添加修饰符: <input v-model="msg" />
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'fan',
+  data () {
+    return {
+      msg: ''
+    }
+  }
+}
+</script>
+```
+演示：  
+![An image](https://github.com/MY729/blog/raw/gh-pages/img/api详解/api-2.gif)
+
+### .trim
+
+修饰符会自动过滤掉输入的首尾空格

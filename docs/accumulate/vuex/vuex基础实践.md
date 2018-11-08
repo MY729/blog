@@ -70,7 +70,7 @@
 
 ![An image](https://github.com/MY729/blog/raw/gh-pages/img/vuex/vuex-15.png)
 
-## 使用常量替代 Mutation 事件类型
+### 使用常量替代 Mutation 事件类型
 
 把这些常量放在单独的文件中可以让你的代码合作者对整个 app 包含的 mutation 一目了然
 
@@ -84,11 +84,11 @@
 
 ![An image](https://github.com/MY729/blog/raw/gh-pages/img/vuex/vuex-19.png)
 
-## mapMutations：在组件中提交Mutations
+### mapMutations：在组件中提交Mutations
 
 ![An image](https://github.com/MY729/blog/raw/gh-pages/img/vuex/vuex-20.png)
 
-## Action
+## Action：异步更新状态
 
 Action 类似于 mutation，不同在于：
 
@@ -98,6 +98,121 @@ Action 类似于 mutation，不同在于：
 Action 函数接受一个与 store 实例具有相同方法和属性的 context 对象，因此你可以调用 `context.commit` 提交一个 mutation，或者通过 `context.state` 和 `context.getters ` 来获取 state 和 getters
 
 实践中，我们会经常用到 ES2015 的 [参数解构](https://github.com/lukehoban/es6features#destructuring) 来简化代码,特别是我们需要调用 commit 很多次的时候）
+
+## Module：模块化
+
+在store文件夹下创建modules文件夹，在modules文件夹下创建helloWord.js文件（随意命名，此处将写入HelloWorld组件的数据，故此命名）
+
+**目录结构**
+
+![An image](https://github.com/MY729/blog/raw/gh-pages/img/vuex/vuex-21.png)
+
+**在index.js中引入helloWord.js文件**
+
+![An image](https://github.com/MY729/blog/raw/gh-pages/img/vuex/vuex-22.png)
+
+**mutation.type.js文件中定义常量type**  
+```javascript
+// 发出获取数据的请求
+export const GET_DATA_REQUEST = 'GET_DATA_REQUEST'
+// 获取数据成功
+export const GET_DATA_SUCCESS = 'GET_DATA_SUCCESS'
+// 获取数据失败
+export const GET_DATA_FAILURE = 'GET_DATA_FAILURE'
+```
+
+**在helloWorld.js文件中写入数据**
+```javascript
+import {
+  GET_DATA_REQUEST,
+  GET_DATA_SUCCESS,
+  GET_DATA_FAILURE
+} from '../mutation.type'
+import service from '../../../config/axios.config.js'
+
+const state = {
+  tableData: []
+}
+
+const mutations = {
+  [GET_DATA_REQUEST] () {
+
+  },
+  [GET_DATA_SUCCESS] (state, payload) {
+    Object.assign(state, { tableData: payload })
+  },
+  [GET_DATA_FAILURE] () {
+
+  }
+}
+
+const actions = {
+  // 这里用的mockjs模拟数据接口，正常使用的时候，方式类似
+  getTableData ({ commit }, city) {
+    commit(GET_DATA_REQUEST)
+    service.get('/api/demo', city).then(res => {
+      commit(GET_DATA_SUCCESS, res.data.proData)
+    }).catch((res) => {
+      commit(GET_DATA_FAILURE)
+    })
+  }
+}
+
+export default {
+  state,
+  mutations,
+  actions
+}
+```  
+**组件HelloWorld.vue中写入模板并引入vuex方法**  
+```vue
+<template>
+  <div class="hello">
+    <el-form>
+      <el-form-item label="城市筛选">
+        <el-input v-model="city" @change="getTableData"></el-input>
+      </el-form-item>
+    </el-form>
+    <el-table :data="tableData">
+      <el-table-column prop="id" label="编号"></el-table-column>
+      <el-table-column prop="name" label="姓名"></el-table-column>
+      <el-table-column prop="date" label="日期"></el-table-column>
+      <el-table-column prop="city" label="城市"></el-table-column>
+      <el-table-column prop="img" label="图片"></el-table-column>
+      <el-table-column prop="mark" label="备注"></el-table-column>
+    </el-table>
+  </div>
+</template>
+
+<script>
+import { mapActions, mapState } from 'vuex'
+export default {
+  name: 'HelloWorld',
+  data () {
+    return {
+      city: ''
+    }
+  },
+  methods: {
+    ...mapActions([
+      'getTableData'
+    ])
+  },
+  computed: {
+    ...mapState({
+      tableData: state => state.helloWorld.tableData
+    })
+  },
+  mounted () {
+    this.getTableData(this.city)
+  }
+}
+</script>
+```
+演示：  
+
+![An image](https://github.com/MY729/blog/raw/gh-pages/img/vuex/vuex-23.png)
+
 
 ## 总结
 

@@ -18,7 +18,7 @@ module.exports = {
     sidebarDepth: 1, // 为2 则将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
     lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
     nav:[
-      { text: '前端学习', link: '/accumulate/' }, // 内部链接 以docs为根目录
+      { text: '前端', link: '/accumulate/' }, // 内部链接 以docs为根目录
       { text: '算法', link: '/algorithm/' }, // 内部链接 以docs为根目录
       { text: '网络', link: '/internetwork/' }, // 内部链接 以docs为根目录
       { text: '文章', link: '/article/' }, // 内部链接 以docs为根目录
