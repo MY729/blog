@@ -45,7 +45,8 @@ module.exports = {
             // 上面地址查找的是：docs>accumulate>JS>test.md 文件
             // 自动加.md 每个子选项的标题 是该md文件中的第一个h1/h2/h3标题
             '/accumulate/JavaScript/发布-订阅和观察者模式', 
-            '/accumulate/JavaScript/判断数据类型和数组类型', 
+            '/accumulate/JavaScript/判断数据类型和数组类型',
+            '/accumulate/JavaScript/JS构造函数-原型-原型链',
           ]
         },
         {

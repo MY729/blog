@@ -116,3 +116,67 @@ vm.userProfile = Object.assign({}, vm.userProfile, {
   favoriteColor: 'Vue Green'
 })
 ```
+
+## 让子组件的props不受父组件影响
+
+**如何让子组件接收的props值不受父组件值变化的影响**
+
+在子组件中，将接收的props的值赋值给一个新定义的字段
+
+**父组件**
+```vue
+<template>
+  <div>
+    <p>我是父组件：{{numberData}}</p>
+    <el-button @click="open">操作</el-button>
+    <el-button @click="resite">重置</el-button>
+    <child-dialog :number-data="numberData"></child-dialog>
+  </div>
+</template>
+<script>
+import ChildDialog from './ChildDialog'
+export default {
+  data () {
+    return {
+      numberData: 0
+    }
+  },
+  methods: {
+    open () {
+      this.numberData = this.numberData + 1
+    },
+    resite () {
+      this.numberData = 0
+    }
+  },
+  components: {
+    ChildDialog
+  }
+}
+</script>
+```
+
+**子组件ChildDialog.vue**
+```vue
+<template>
+  <div>
+    <p>我是子组件props: {{numberData}}</p>
+    <p>我是子组件data: {{handleData}}</p>
+  </div>
+</template>
+<script>
+export default {
+  props: ['numberData'],
+  data () {
+    return {
+      createdNumData: '',
+      handleData: this.numberData
+    }
+  }
+}
+</script>
+```
+演示：
+
+![An image](https://github.com/MY729/blog/raw/gh-pages/img/vue相关/vue-1.gif)
+

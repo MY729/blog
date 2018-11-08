@@ -1,6 +1,6 @@
 # API 详解（部分）
 
-只记录比较难理解的
+只记录较难理解的
 
 ## key
 > 为了提高vue更新DOM的性能，需要为每项提供一个唯一的key属性，有相同父元素的子元素必须有独特的key值，重复的key会造成渲染错误
@@ -88,3 +88,79 @@ export default {
 ### .trim
 
 修饰符会自动过滤掉输入的首尾空格
+
+### .sync
+::: tip 提示
+2.3.0+ 新增
+:::
+
+作为一个编译时的语法糖存在。它会被扩展为一个自动更新父组件属性的 v-on 监听器
+
+**功能:**  
+当一个子组件改变了一个 prop 的值时，这个变化也会同步到父组件中所绑定(即组件之间的双向绑定),如果我们不用.sync,也可以props传初始值，然后事件监听
+
+**父组件**
+```vue
+<template>
+  <div>
+    <p>我是父组件numberData：{{numberData}}</p>
+    <el-button @click="open">操作</el-button>
+    <el-button @click="resite">重置</el-button>
+    <child-dialog :number-data.sync="numberData"></child-dialog>
+  </div>
+</template>
+<script>
+import ChildDialog from './ChildDialog'
+export default {
+  data () {
+    return {
+      numberData: 0
+    }
+  },
+  methods: {
+    open () {
+      this.numberData++
+    },
+    resite () {
+      this.numberData = 0
+    }
+  },
+  components: {
+    ChildDialog
+  }
+}
+</script>
+<style>
+.el-input {
+  width: 200px;
+}
+</style>
+```
+**子组件ChildDialog.vue**
+```vue
+<template>
+  <div>
+    <p>我是子组件data: {{numberData}}</p>
+    <el-input v-model="data" @input="changeData"></el-input>
+  </div>
+</template>
+<script>
+export default {
+  props: ['numberData'],
+  data () {
+    return {
+      data: this.numberData
+    }
+  },
+  methods: {
+    changeData (val) {
+      this.$emit('update:numberData', val)
+    }
+  }
+}
+</script>
+```
+
+演示：  
+
+![An image](https://github.com/MY729/blog/raw/gh-pages/img/api详解/api-3.gif)
