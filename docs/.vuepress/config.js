@@ -47,6 +47,7 @@ module.exports = {
             '/accumulate/JavaScript/发布-订阅和观察者模式', 
             '/accumulate/JavaScript/判断数据类型和数组类型',
             '/accumulate/JavaScript/JS构造函数-原型-原型链',
+            '/accumulate/JavaScript/常用数组和字符串方法',
           ]
         },
         {
@@ -68,7 +69,8 @@ module.exports = {
           title: 'vue',
           collapsable: false,
           children: [
-            '/accumulate/vue/API详解'
+            '/accumulate/vue/API详解',
+            '/accumulate/vue/原理解析'
           ]
         },
       ],
@@ -81,6 +83,7 @@ module.exports = {
       // 面试
       '/interview/': [
         '/interview/',
+        'javascript相关',
         'vue相关',
         'html相关',
         '网络相关',

@@ -164,3 +164,57 @@ export default {
 演示：  
 
 ![An image](https://github.com/MY729/blog/raw/gh-pages/img/api详解/api-3.gif)
+
+## 自定义指令
+
+有的情况下，仍然需要对普通 DOM 元素进行底层操作，这时候就会用到自定义指令  
+
+**示例：** 自定义指令，使得初始化进入页面时，指定`名字`输入框聚焦并修改初始值
+```vue
+<template>
+  <div class="fan">
+    <el-form inline>
+      <el-form-item label="数字">
+        <input v-model="number"/>
+      </el-form-item>
+      <el-form-item label="名字">
+        <p>初始值为小明，绑定自定义v-focus后，修改为木子并聚焦此输入框</p>
+        <input v-model="name" v-focus/>
+      </el-form-item>
+    </el-form>
+  </div>
+</template>
+<script>
+export default {
+  data () {
+    return {
+      number: 5,
+      name: '小明' // 初始值为小明，绑定自定义v-focus后，修改为木子并聚焦此输入框
+    }
+  },
+  directives: {
+    focus: {
+      // 指令的定义
+      inserted: function (el) {
+        console.log('打印初始值===', el.value)
+        el.value = '木子'
+        el.focus()
+      }
+    }
+  }
+}
+</script>
+<style>
+.fan {
+  width: 80%;
+  margin: 10%;
+}
+</style>
+```  
+演示：
+
+![An image](https://github.com/MY729/blog/raw/gh-pages/img/api详解/api-4.gif)  
+
+其他钩子函数部分的介绍，参考官方文档 [自定义指令](https://cn.vuejs.org/v2/guide/custom-directive.html#%E7%AE%80%E4%BB%8B)
+
+## slots 插槽
