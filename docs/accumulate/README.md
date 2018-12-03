@@ -17,5 +17,7 @@
   *  [HTTP请求方法详解](http://localhost:7729/blog/internetwork/HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3.html)  
   * [TCP三次握手](http://localhost:7729/blog/internetwork/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.html)  
   * [http请求/响应报文学习](http://localhost:7729/blog/internetwork/http%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84.html)  
-  * [常用数组和字符串方法](http://localhost:7729/blog/accumulate/JavaScript/%E5%B8%B8%E7%94%A8%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95.html)
+  * [常用数组和字符串方法](http://localhost:7729/blog/accumulate/JavaScript/%E5%B8%B8%E7%94%A8%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95.html)  
+  * nodeJs
+  * promise
 :::
