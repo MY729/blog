@@ -20,4 +20,5 @@
   * [常用数组和字符串方法](http://localhost:7729/blog/accumulate/JavaScript/%E5%B8%B8%E7%94%A8%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95.html)  
   * nodeJs
   * promise
+  * [闭包](http://localhost:7729/blog/books/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html#this%E3%80%81call%E3%80%81apply)
 :::
