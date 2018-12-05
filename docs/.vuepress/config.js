@@ -76,6 +76,14 @@ module.exports = {
             '/accumulate/vue/原理解析'
           ]
         },
+        {
+          title: 'html与css',
+          collapsable: false,
+          children: [
+            '/accumulate/html与css/css',
+            '/accumulate/html与css/html'
+          ]
+        },
       ],
       // 常见问题
       '/problem/': [
@@ -91,6 +99,7 @@ module.exports = {
           collapsable: false,
           children: [
             '/books/javascript设计模式与开发实践/第一部分-基础知识',
+            '/books/javascript设计模式与开发实践/第二部分-设计模式',
           ]
         },
       ],
