@@ -1,12 +1,18 @@
 # 前言
 
-## 前端学习地址
+## 前端博客类学习地址
 * [vue技术揭秘](https://ustbhuangyi.github.io/vue-analysis/reactive/)
 * [interviewMap](https://yuchengkai.cn/docs/zh/frontend/#%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B)
 * [OBKoro1前端积累](http://obkoro1.com/web_accumulate/accumulate/#%E5%89%8D%E7%AB%AF%E7%A7%AF%E7%B4%AF)
 * [javascript学习](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes)  
 * [张旭鑫空间](https://www.zhangxinxu.com/wordpress/2018/12/css-position-sticky/)  
-* [css技术](https://css-tricks.com/)
+
+## 前端周刊类地址
+  * [FEX周刊](http://fex.baidu.com/)
+  * [奇舞周刊](https://weekly.75team.com/)  
+  * [InfoQ 前端周刊](https://www.infoq.cn/article/2018%2F03%2Farch-weekly-54?utm_source=news_about_Front-end&utm_medium=link&utm_campaign=Front-end)  
+  * [推酷](https://www.tuicool.com/mags)  
+  * [css-tricks](https://css-tricks.com/)
 
 ## 工具类
 * [JSON在线编辑器](https://www.qqe2.com/)
