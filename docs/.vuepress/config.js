@@ -108,7 +108,8 @@ module.exports = {
       '/algorithm/': [
         '/algorithm/',
         '单例模式',
-        '在二维数组中查找'
+        '在二维数组中查找',
+        '排序'
       ],
       // 面试
       '/interview/': [
