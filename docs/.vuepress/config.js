@@ -81,6 +81,7 @@ module.exports = {
           collapsable: false,
           children: [
             '/accumulate/html与css/css',
+            '/accumulate/html与css/css3',
             '/accumulate/html与css/html'
           ]
         },
