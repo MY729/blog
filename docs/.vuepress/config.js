@@ -109,7 +109,7 @@ module.exports = {
         '/algorithm/',
         '单例模式',
         '在二维数组中查找',
-        '排序'
+        '数组去重'
       ],
       // 面试
       '/interview/': [

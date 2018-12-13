@@ -41,3 +41,58 @@ forEach(arr) //输出:  1 2 3 4 5
 var obj = { x: 1, y: 2, z: 3 }
 forEach(obj) //输出:  x 1 y 2 z 3
 ```
+## 解析url参数为对象
+
+### 考点/思路
+考察数组与字符串处理的知识, [常见数组和字符串方法](/accumulate/JavaScript/常用数组和字符串方法.html)
+  1. 通过字符 `?` 分割获取参数
+  2. 通过字符 `&` 将字符串参数分割为数组
+  3. 通过字符 `=` 处理参数为对象格式
+
+### 代码实现
+```js
+function urlSearch(href) {
+  let name, value
+  let str = href //取得整个地址栏
+  let num = str.indexOf("?")
+  str = str.substr(num + 1) //取得所有参数
+  let arr = str.split("&") //各个参数放到数组里
+  let json = {}
+  for (let i = 0; i < arr.length; i++) {
+    num = arr[i].indexOf("=")
+    if (num > 0) {
+      name = arr[i].substring(0, num)
+      value = arr[i].substr(num + 1)
+      json[name] = value
+    }
+  }
+  return json
+}
+urlSearch('https://www.baidu.com/s?ie=UTF-8&wd=csdn') // {ie: "UTF-8", wd: "csdn"}
+```
+
+## 获取一定范围内n个随机整数
+
+### 知识点
+
+  * `math.floor(x)` 返回小于参数x的最大整数,即对浮点数向下取整
+  * `math.random()` 取得某个范围内的随机数
+
+### 代码实现
+
+```js
+function getRandomNumber(start, end, n) {
+	var arr = []
+	for (var i = 0; i < n; i++) {
+		var number = Math.floor(Math.random() * (end-start + 1) + start)
+		if (arr.indexOf(number) < 0) {
+			arr.push(number)
+		} else {
+			i--
+		}
+	}
+	return arr
+}
+getRandomNumber(1, 20, 5) // [11, 2, 8, 16, 10]
+getRandomNumber(1, 20, 5) // [2, 8, 3, 12, 11]
+```
