@@ -75,8 +75,8 @@ git add .
 git commit -m '这里写上你的备注'
 git push origin master
 ```
-## 预览效果 vcvv
+## 预览效果
 
 ![An image](https://github.com/MY729/BLOG/raw/gh-pages/img/文章/预览.png)
 
-打开链接就可以查看效果啦 https://my729.github.io/illustrate-ppt/
+打开链接就可以查看效果啦 [https://my729.github.io/illustrate-ppt/](https://my729.github.io/illustrate-ppt/)

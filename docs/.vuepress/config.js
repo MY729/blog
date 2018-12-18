@@ -131,6 +131,7 @@ module.exports = {
       '/article/': [
         '/article/',
         'markdown语法详解',
+        'github在线预览vue项目',
       ]
     }
   }
