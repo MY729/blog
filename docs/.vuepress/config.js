@@ -140,6 +140,7 @@ module.exports = {
         '/article/',
         'markdown语法详解',
         'github在线预览vue项目',
+        'EasyMock使用',
       ]
     }
   }
