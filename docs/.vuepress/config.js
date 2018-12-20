@@ -54,18 +54,10 @@ module.exports = {
           ]
         },
         {
-          title: 'ES6',
+          title: 'react',
           collapsable: false,
           children: [
-            '/accumulate/ES6/数组常用方法',
-            '/accumulate/ES6/ES7 特性',
-          ]
-        },
-        {
-          title: 'vuex',
-          collapsable: false,
-          children: [
-            '/accumulate/vuex/vuex基础实践',
+            '/accumulate/react/基础学习',
           ]
         },
         {
@@ -83,6 +75,22 @@ module.exports = {
             '/accumulate/html与css/css',
             '/accumulate/html与css/css3',
             '/accumulate/html与css/html'
+          ]
+        },
+        {
+          title: 'ES6',
+          collapsable: false,
+          children: [
+            '/accumulate/ES6/数组常用方法',
+            '/accumulate/ES6/ES7 特性',
+            '/accumulate/ES6/基础学习',
+          ]
+        },
+        {
+          title: 'vuex',
+          collapsable: false,
+          children: [
+            '/accumulate/vuex/vuex基础实践',
           ]
         },
       ],
