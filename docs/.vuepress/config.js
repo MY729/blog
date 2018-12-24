@@ -16,6 +16,9 @@ module.exports = {
     logo: '/img/header.png',
     // 导航栏
     sidebarDepth: 1, // 为2 则将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
+    docsRepo: 'MY729/blog/issues/new#',
+    editLinks: true,
+    editLinkText: '纠正问题/留言/交流',
     lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
     nav:[
       { text: '前端学习', link: '/accumulate/' }, // 内部链接 以docs为根目录
@@ -27,12 +30,13 @@ module.exports = {
       { text: 'interview', link: '/interview/' }, // 内部链接 以docs为根目录
       // 下拉列表
       {
-        text: 'GitHub',
+        text: '拓展',
         items: [
           { text: 'GitHub地址', link: 'https://github.com/MY729'},
           { text: '花瓣地址', link: 'http://huaban.com/tj3aawhzdp/'}
         ]
-      }        
+      },
+      { text: '纠正问题/留言/交流', link: 'https://github.com/MY729/blog/issues/new' }, // 内部链接 以docs为根目录
     ],
     // 侧边栏
     sidebar: {

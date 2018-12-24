@@ -95,7 +95,7 @@ EasyMock的写法和Mock.js一模一样
 在项目找到配置代理的地方
 ```js
 devServer: {
-  proxy: {
+  proxy: {// proxy在这里是vue-cli3的写法，在vue-cli2中为proxyTable
     '^/api': {
       target: ' https://easy-mock.com/mock/5c1b4503fce7023df569bac2/demo/example',
       secure: false, // 若接口地址为https需配置这个
@@ -214,3 +214,7 @@ export default {
 **演示**
 
 ![An image](https://github.com/MY729/BLOG/raw/gh-pages/img/文章/mock-3.gif)
+
+**参考文章：**
+  1. [送给做前端开发的你: 可视化快速生成模拟数据服务——Easy Mock](https://baijiahao.baidu.com/s?id=1616625969023195600&wfr=spider&for=pc)
+  2. [mockJs](http://mockjs.com/0.1/#)
