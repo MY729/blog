@@ -55,6 +55,7 @@ module.exports = {
             '/accumulate/JavaScript/JS构造函数-原型-原型链',
             '/accumulate/JavaScript/常用数组和字符串方法',
             '/accumulate/JavaScript/Promise对象',
+            '/accumulate/JavaScript/单线程-异步-异步方案',
           ]
         },
         {
