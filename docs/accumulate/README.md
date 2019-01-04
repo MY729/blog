@@ -7,6 +7,7 @@
 :::
 
 ## 前端周刊类地址
+  * [github 趋势榜](https://github.com/trending/javascript?since=daily)
   * [FEX周刊](http://fex.baidu.com/)
   * [奇舞周刊](https://weekly.75team.com/)  
   * [推酷](https://www.tuicool.com/mags)  
@@ -24,6 +25,7 @@
 
 ## 工具类
 * [JSON在线编辑器](https://www.qqe2.com/)
+* [前端在线编辑-CodePen](https://codepen.io/dashboard/)
 
 ## 软件类
 * [录屏转动图](https://github.com/MY729/blog/raw/gh-pages/tools/GifCam.zip)
