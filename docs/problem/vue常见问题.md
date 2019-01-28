@@ -75,3 +75,59 @@ export default {
 }
 </script>
 ```
+
+## watch监控不到深度对象属性值的变化
+
+**问题描述**
+
+子组件监测父组件传过来的值options
+
+```js
+// 父组件
+data() {
+  return {
+    options: {}
+  }
+},
+methods: {
+  handleSelect(options) {
+    this.options = options
+  }
+}
+
+// 子组件
+props: {
+  options: {
+    type: Object | Array,
+    require: true
+  }
+},
+watch: {
+  options: {
+    handler() {
+      console.log('666666')
+    },
+    deep: true
+  }
+}
+```
+options变化 watch不打印值
+
+**原因**
+
+在javascript里面动态添加的新属性是不会触发watch的
+
+**解决**
+
+父组件初始化属性值
+
+```js
+data() {
+  return {
+    options: {
+      series_id: null,
+      status: null
+    }
+  }
+},
+```

@@ -33,6 +33,7 @@ module.exports = {
         text: '拓展',
         items: [
           { text: 'GitHub地址', link: 'https://github.com/MY729'},
+          { text: '前端学习进度笔记', link: 'https://my729.github.io/frontend_learn/'},
           { text: '花瓣地址', link: 'http://huaban.com/tj3aawhzdp/'}
         ]
       },

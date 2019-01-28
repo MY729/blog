@@ -24,3 +24,9 @@ function b64DecodeUnicode(str) {
 b64DecodeUnicode('5qW85YWwIDIwMTnmrL4gMi41IFMvQyBIRVYgWEUg5Zub6amx5re35Yqo5pm66IGU5bCK6LS154mI')
 // "楼兰 2019款 2.5 S/C HEV XE 四驱混动智联尊贵版"
 ```
+
+## js导出PDF
+
+::: danger Todo
+待补充
+:::
