@@ -26,6 +26,8 @@
 ## 工具类
 * [JSON在线编辑器](https://www.qqe2.com/)
 * [前端在线编辑-CodePen](https://codepen.io/dashboard/)
+* [在线绘图工具-ProcessOn](https://www.processon.com/diagrams)
+* [百度脑图](http://naotu.baidu.com/home)
 
 ## 软件类
 * [录屏转动图](https://github.com/MY729/blog/raw/gh-pages/tools/GifCam.zip)
