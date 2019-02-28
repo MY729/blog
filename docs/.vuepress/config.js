@@ -34,6 +34,8 @@ module.exports = {
         items: [
           { text: 'GitHub地址', link: 'https://github.com/MY729'},
           { text: '前端学习进度笔记', link: 'https://my729.github.io/frontend_learn/'},
+          { text: 'CSDN博客', link: 'https://blog.csdn.net/qq_37467034'},
+          { text: '简书', link: 'https://www.jianshu.com/u/7c1f70241580' },
           { text: '花瓣地址', link: 'http://huaban.com/tj3aawhzdp/'}
         ]
       },
@@ -58,6 +60,8 @@ module.exports = {
             '/accumulate/JavaScript/Promise对象',
             '/accumulate/JavaScript/单线程-异步-异步方案',
             '/accumulate/JavaScript/JS的堆内存和栈内存',
+            '/accumulate/JavaScript/闭包',
+            '/accumulate/JavaScript/this指向',
           ]
         },
         {
@@ -72,7 +76,8 @@ module.exports = {
           collapsable: false,
           children: [
             '/accumulate/vue/API详解',
-            '/accumulate/vue/原理解析'
+            '/accumulate/vue/原理解析',
+            '/accumulate/vue/vue生命周期'
           ]
         },
         {
@@ -91,6 +96,7 @@ module.exports = {
             '/accumulate/ES6/数组常用方法',
             '/accumulate/ES6/ES7 特性',
             '/accumulate/ES6/基础学习',
+            '/accumulate/ES6/promise',
           ]
         },
         {
@@ -135,6 +141,13 @@ module.exports = {
           children: [
             '/interview/js基础面试/变量类型和计算',
             '/interview/js基础面试/原型和原型链',
+          ]
+        },
+        {
+          title: '面经整理',
+          collapsable: false,
+          children: [
+            '/interview/面经整理/腾讯前端面试',
           ]
         },
         'javascript相关',
