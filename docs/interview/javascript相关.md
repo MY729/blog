@@ -96,3 +96,177 @@ function getRandomNumber(start, end, n) {
 getRandomNumber(1, 20, 5) // [11, 2, 8, 16, 10]
 getRandomNumber(1, 20, 5) // [2, 8, 3, 12, 11]
 ```
+
+## for-in 和for-of 的区别
+
+::: warning 知识点
+  * for-of适用于拥有迭代器对象的集合，但是不能遍历普通对象,因为没有迭代器对象，与forEach()不同的是，它可以正确响应break、continue和return语句
+  * 推荐在循环对象属性的时候，使用fo-in,在遍历数组的时候的时候使用for-of
+  * for-of不能循环普通的对象，需要通过和Object.keys()搭配使用
+  * for-in会遍历数组和对象所有的可枚举属性，包括原型和自定义属性, 而for-of只会遍历自身可枚举的
+:::
+
+### for-in
+
+先看实例：
+* 遍历数组
+```js
+Array.prototype.method=function(){
+　　console.log(this.length);
+}
+var myArray=[1,2,4]
+myArray.name="数组"
+for (var index in myArray) {
+  console.log(myArray[index]);
+}
+
+// 打印结果
+1
+2
+4
+数组
+ƒ (){
+　　console.log(this.length);
+}
+```
+* 遍历对象
+```js
+Object.prototype.method=function(){
+　　console.log(this);
+}
+var myObject={
+　　a:1,
+　　b:2,
+　　c:3
+}
+for (var key in myObject) {
+  console.log(key);
+}
+
+// 打印结果
+a
+b
+c
+method
+```
+::: tip for-in遍历的特点
+1. 对于数组遍历的是数组的索引（即键名），而不是value，对于对象遍历的是属性
+2. 会遍历数组和对象所有的可枚举属性，包括原型和自定义属性
+:::
+
+对于对象，如果不想遍历原型方法和属性的话，可以在循环时使用hasOwnPropery方法判断某属性是否是该对象的实例属性
+```js
+Object.prototype.method=function(){
+　　console.log(this);
+}
+var myObject={
+　　a:1,
+　　b:2,
+　　c:3
+}
+for (var key in myObject) {
+  if (myObject.hasOwnProperty(key)) {
+    console.log(key);
+  }
+}
+
+// 打印结果
+a
+b
+c
+```
+
+### for-of
+
+for-of是ES6的语法
+
+* 数组遍历
+```js
+Array.prototype.method=function(){
+　　console.log(this.length);
+}
+var myArray=[1,2,4]
+myArray.name="数组";
+for (var value of myArray) {
+  console.log(value);
+}
+
+// 打印结果
+1
+2
+4
+```
+
+* 字符串遍历
+```js
+var str = 'hello'
+for (var st of str) {
+  console.log(st)
+}
+
+// 打印结果
+h
+e
+l
+l
+o
+```
+::: tip for-of遍历的特点
+1. 遍历的是数组元素值而不是索引，for-of不能循环遍历普通对象
+2. 不会遍历原型上的属性和方法
+3. 支持字符串遍历
+:::
+
+* 定义一个对象，使之可以用 for-of 循环遍历
+
+[参考学习：ES6入门-阮一峰](http://es6.ruanyifeng.com/#docs/iterator)
+
+只有可遍历的（iterable）的对象才能使用 of 循环遍历。可以通过给对象添加iterator接口来实现普通对象的for-of循环
+```js
+let obj = {
+  data: [ 'hello', 'world' ],
+  [Symbol.iterator]() {
+    const self = this;
+    let index = 0;
+    return {
+      next() {
+        if (index < self.data.length) {
+          return {
+            value: self.data[index++],
+            done: false
+          };
+        } else {
+          return { value: undefined, done: true };
+        }
+      }
+    };
+  }
+};
+for (var key of obj) {
+  console.log(key)
+}
+
+// 打印结果
+hello
+world
+```
+
+* 如果实在想用for...of来遍历普通对象的属性的话，可以通过和Object.keys()搭配使用，先获取对象的所有key的数组
+然后遍历：
+```js
+var obj = {
+  a: 1,
+  b: 'fmy'
+}
+console.log(Object.keys(obj)) // ["a", "b"]
+for (var key of Object.keys(obj)) {
+  console.log(`${key}: ${obj[key]}`)
+}
+
+// 打印结果
+a: 1
+b: fmy
+```
+
+https://www.jianshu.com/p/c43f418d6bf0
+https://segmentfault.com/q/1010000006658882
