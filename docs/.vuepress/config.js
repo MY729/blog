@@ -62,6 +62,7 @@ module.exports = {
             '/accumulate/JavaScript/JS的堆内存和栈内存',
             '/accumulate/JavaScript/闭包',
             '/accumulate/JavaScript/this指向',
+            '/accumulate/JavaScript/数组扁平化',
           ]
         },
         {
@@ -93,8 +94,10 @@ module.exports = {
           title: 'ES6',
           collapsable: false,
           children: [
-            '/accumulate/ES6/数组常用方法',
             '/accumulate/ES6/ES7 特性',
+            '/accumulate/ES6/ES8 特性',
+            '/accumulate/ES6/ES9 特性',
+            '/accumulate/ES6/数组常用方法',
             '/accumulate/ES6/基础学习',
             '/accumulate/ES6/promise',
           ]

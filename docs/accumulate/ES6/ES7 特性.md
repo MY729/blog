@@ -30,7 +30,28 @@
   }
 ```
 
-## 指数操作符
+#### indexOf 和 includes的比较
+
+* includes()能否发现NaN，而indexof()不能
+
+```js
+[NaN].includes(NaN) // true
+[NaN].indexOf(NaN) // -1
+```
+
+* 只能判断简单类型的数据，对于复杂类型的数据，比如对象类型的数组，二维数组，这些，是无法判断的.
+
+```js
+var arr = [1, [2, 3], 4]
+arr.includes([2, 3])   //false
+arr.indexOf([2, 3])    //-1
+```
+
+::: tip 总结
+由于它对NaN的处理方式与indexOf不同，假如你只想知道某个值是否在数组中而并不关心它的索引位置，建议使用includes()。如果你想获取一个值在数组中的位置，那么你只能使用indexOf方法
+:::
+
+## 指数操作符(取幂运算符)
 
 #### 不使用ES7语法
 
