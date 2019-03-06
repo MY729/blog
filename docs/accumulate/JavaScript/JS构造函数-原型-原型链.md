@@ -77,9 +77,9 @@ f.alertName() // 张三我是显示原型的属性
 
 所有的引用类型（对象、数组、函数）都有构造函数
     
-    var a = {} 其实是var a = new Object()的语法糖
-    var a = [] 其实是var a = new Array()的语法糖
-    function Foo() {} 其实是var Foo = new Function ()
+  * var a = {} 其实是var a = new Object()的语法糖
+  * var a = [] 其实是var a = new Array()的语法糖
+  * function Foo() {} 其实是var Foo = new Function ()
 
 ## 获取对象原型
 
