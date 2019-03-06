@@ -1,7 +1,5 @@
 # css相关
 
-https://codepen.io/my729/pen/QYZmEa
-
 ## BFC
 
 ### BFC是怎样形成的
@@ -15,8 +13,26 @@ https://codepen.io/my729/pen/QYZmEa
 
 如果想要创建一个新的BFC，只需要给它添加上面提到的任何一个CSS样式就可以了
 
-### BFC会导致子元素外边距折叠，如果不在同一个BFC则不会有这种问题
+#### BFC会导致子元素外边距折叠，如果不在同一个BFC则不会有这种问题
 
-### 参考文章
+#### 参考文章 [https://www.w3cplus.com/css/understanding-block-formatting-contexts-in-css.html](https://www.w3cplus.com/css/understanding-block-formatting-contexts-in-css.html)  
 
-* [https://www.w3cplus.com/css/understanding-block-formatting-contexts-in-css.html](https://www.w3cplus.com/css/understanding-block-formatting-contexts-in-css.html)  
+## 知识点：后定义的样式会覆盖前面的
+
+题目：两个div颜色分别是什么
+```html
+<div class="red blue">123</div>
+<div class="blue red">123</div>
+```
+
+```css
+.red {
+  color: red
+}
+
+.blue {
+  color: blue
+}
+```
+
+答案： 都是蓝色

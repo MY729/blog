@@ -46,7 +46,7 @@ a.student.name // "kk"
 
 ## 深拷贝
 
-### JSON.stringify()和JSON.parse()实现
+### 第一种方法：JSON.stringify()和JSON.parse()实现
 
 缺点：
 
@@ -68,7 +68,7 @@ b.student.name = 'kk'
 a.student.name // "木子"
 ```
 
-### 递归实现
+### 第二种方法：递归实现
 
 拓展和边界问题：
   1. 参数类型做校验，不是对象直接返回

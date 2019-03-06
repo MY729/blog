@@ -55,7 +55,7 @@ module.exports = {
             // 自动加.md 每个子选项的标题 是该md文件中的第一个h1/h2/h3标题
             '/accumulate/JavaScript/JS构造函数-原型-原型链',
             '/accumulate/JavaScript/继承',
-            '/accumulate/JavaScript/闭包',
+            '/accumulate/JavaScript/作用域-作用域链-闭包',
             '/accumulate/JavaScript/发布-订阅和观察者模式', 
             '/accumulate/JavaScript/判断数据类型和数组类型',
             '/accumulate/JavaScript/常用数组和字符串方法',
@@ -63,7 +63,6 @@ module.exports = {
             '/accumulate/JavaScript/单线程-异步-异步方案',
             '/accumulate/JavaScript/JS的堆内存和栈内存',
             '/accumulate/JavaScript/this指向',
-            '/accumulate/JavaScript/数组扁平化',
             '/accumulate/JavaScript/深拷贝vs浅拷贝',
           ]
         },
@@ -135,7 +134,8 @@ module.exports = {
         '/algorithm/',
         '单例模式',
         '在二维数组中查找',
-        '数组去重'
+        '数组去重',
+        '数组扁平化'
       ],
       // 面试
       '/interview/': [
