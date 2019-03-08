@@ -1,7 +1,7 @@
-# this指向详解及改变它的指向的方法
+# this指向及改变它的指向的方法
 ## this指向详解
 ::: tip 知识点
-this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象（这句话不那么严谨，作为一般情况下是可以的）
+ES5中，this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象（这句话不那么严谨，作为一般情况下是可以的）
 :::
 
 再加下面的补充，就完美啦：
@@ -266,3 +266,54 @@ c(1,2);
 ```
 
 **总结：** call和apply都是改变上下文中的this并立即执行这个函数，bind方法可以让对应的函数想什么时候调就什么时候调用，并且可以将参数在执行的时候添加，这是它们的区别
+
+## 剪头函数
+
+::: tip 知识点
+ES6 的箭头函数是可以避免 ES5 中使用 this 的坑的。箭头函数的 this 始终指向函数定义时的 this，而非执行时。
+:::
+
+::: danger 重点
+箭头函数需要记着这句话：“箭头函数中没有 this 绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则 this 绑定的是最近一层非箭头函数的 this，否则，this 为 undefined”
+:::
+
+先看一个示例：
+```js
+var name = "windowsName"
+var a = {
+  name : "Cherry",
+  func1: function () {
+    console.log(this.name)     
+  },
+  func2: function () {
+    setTimeout(function () {
+      this.func1()
+    },100)
+  }
+}
+
+a.func2() // this.func1 is not a function
+```
+::: danger 重点
+超时调用的代码都是在全局作用域中执行的，因此函数中this的值在非严格模式下指向window对象，在严格模式下是undefined
+:::
+
+所以上例在不使用箭头函数的情况下，是会报错的，因为最后调用 setTimeout 的对象是 window，但是在 window 中并没有 func1 函数
+
+使用剪头函数：
+```js
+var name = "windowsName"
+var a = {
+  name : "Cherry",
+  func1: function () {
+    console.log(this.name)     
+  },
+  func2: function () {
+    setTimeout(() => {
+      this.func1()
+    },100)
+  }
+}
+
+a.func2() // Cherry
+```
