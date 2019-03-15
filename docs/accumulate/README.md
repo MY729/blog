@@ -10,6 +10,7 @@
   * [掘金](https://juejin.im/explore/frontend)
   * [思否](https://segmentfault.com/)
   * [语雀-前端入门](https://www.yuque.com/fe9/basic/fnvdeu)
+  * [语雀-高级前端进阶](https://www.yuque.com/advanced-frontend)
   * [github 趋势榜](https://github.com/trending/javascript?since=daily)
   * [FEX周刊](http://fex.baidu.com/)
   * [奇舞周刊](https://weekly.75team.com/)  
