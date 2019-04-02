@@ -15,7 +15,7 @@ module.exports = {
   themeConfig: {
     logo: '/img/header.png',
     // 导航栏
-    sidebarDepth: 1, // 为2 则将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
+    sidebarDepth: 2, // 为2 则将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
     docsRepo: 'MY729/blog/issues/new#',
     editLinks: true,
     editLinkText: '纠正问题/留言/交流',
