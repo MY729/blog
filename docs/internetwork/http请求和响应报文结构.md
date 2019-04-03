@@ -12,7 +12,7 @@
 
     GET /data/info.html HTTP/1.1
 
-  HTTP常见的请求方法有 GET/POST, 其他请求方法请戳这里 [HTTP请求方法详解](https://my729.github.io/blog/internetwork/HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3.html)
+  HTTP常见的请求方法有 GET/POST, 其他请求方法请戳这里 [HTTP请求方法详解](https://my729.github.io/frontend_learn/internet/%E5%9B%BE%E8%A7%A3HTTP/%E7%AC%AC%E4%BA%8C%E7%AB%A0.html#http%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95)
 
   HTTP协议版本有两种：HTTP1.0/HTTP1.1 ，可以这样区分：  
   HTTP1.0对于每个连接都只能传送一个请求和响应，请求就会关闭，HTTP1.0没有Host字段;而HTTP1.1在同一个连接中可以传送多个请求和响应，多个请求可以重叠和同时进行，HTTP1.1必须有Host字段。

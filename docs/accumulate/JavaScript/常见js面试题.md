@@ -1,4 +1,4 @@
-# javascript相关
+# 常见js面试题
 
 ## 如何判断一个变量是数组类型
 
@@ -98,6 +98,10 @@ getRandomNumber(1, 20, 5) // [2, 8, 3, 12, 11]
 ```
 
 ## for-in 和for-of 的区别
+
+参考文章：
+[https://www.jianshu.com/p/c43f418d6bf0](https://www.jianshu.com/p/c43f418d6bf0)
+[https://segmentfault.com/q/1010000006658882](https://segmentfault.com/q/1010000006658882)
 
 ::: warning 知识点
   * for-of适用于拥有迭代器对象的集合，但是不能遍历普通对象,因为没有迭代器对象，与forEach()不同的是，它可以正确响应break、continue和return语句
@@ -267,6 +271,3 @@ for (var key of Object.keys(obj)) {
 a: 1
 b: fmy
 ```
-
-https://www.jianshu.com/p/c43f418d6bf0
-https://segmentfault.com/q/1010000006658882

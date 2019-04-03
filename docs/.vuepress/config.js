@@ -15,7 +15,7 @@ module.exports = {
   themeConfig: {
     logo: '/img/header.png',
     // 导航栏
-    sidebarDepth: 2, // 为2 则将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
+    sidebarDepth: 1, // 为2 则将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
     docsRepo: 'MY729/blog/issues/new#',
     editLinks: true,
     editLinkText: '纠正问题/留言/交流',
@@ -53,6 +53,7 @@ module.exports = {
             // 以docs为根目录来查找文件 
             // 上面地址查找的是：docs>accumulate>JS>test.md 文件
             // 自动加.md 每个子选项的标题 是该md文件中的第一个h1/h2/h3标题
+            '/accumulate/JavaScript/常见js面试题',
             '/accumulate/JavaScript/JS构造函数-原型-原型链',
             '/accumulate/JavaScript/继承',
             '/accumulate/JavaScript/作用域-作用域链-闭包',
@@ -156,18 +157,13 @@ module.exports = {
             '/interview/面经整理/哔哩哔哩面试',
 
           ]
-        },
-        'javascript相关',
-        'vue相关',
-        'html相关',
-        'css相关',
-        '网络相关',
+        }
       ],
       // 网络
       '/internetwork/': [
         '/internetwork/',
+        '常见网络题目',
         'http请求和响应报文结构',
-        'HTTP请求方法详解',
         'TCP三次握手',
       ],
       // 文章
