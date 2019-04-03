@@ -23,7 +23,6 @@ module.exports = {
     nav:[
       { text: '前端学习', link: '/accumulate/' }, // 内部链接 以docs为根目录
       { text: '前端常见问题', link: '/problem/' }, // 内部链接 以docs为根目录
-      { text: '前端书籍', link: '/books/' }, // 内部链接 以docs为根目录
       { text: '算法', link: '/algorithm/' }, // 内部链接 以docs为根目录
       { text: '网络', link: '/internetwork/' }, // 内部链接 以docs为根目录
       { text: '文章', link: '/article/' }, // 内部链接 以docs为根目录
@@ -117,18 +116,6 @@ module.exports = {
         '/problem/',
         'vue常见问题',
         'js常见问题'
-      ],
-      // 前端书籍
-      '/books/': [
-        '/books/',
-        {
-          title: 'javascript设计模式与开发实践',
-          collapsable: false,
-          children: [
-            '/books/javascript设计模式与开发实践/第一部分-基础知识',
-            '/books/javascript设计模式与开发实践/第二部分-设计模式',
-          ]
-        },
       ],
       // 算法 docs文件夹下面的algorithm文件夹 这是第二组侧边栏 跟第一组侧边栏没关系
       '/algorithm/': [

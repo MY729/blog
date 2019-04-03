@@ -271,3 +271,123 @@ for (var key of Object.keys(obj)) {
 a: 1
 b: fmy
 ```
+
+## 防抖与节流
+
+::: tip 概念
+
+* 防抖: 当连续触发事件时，最后一次触发事件后，只有任务触发的间隔超过指定间隔的时候，任务才会执行
+* 节流: 指定时间间隔内只会执行一次任务，当连续触发事件时，事件只按自己的时间间隔执行
+:::
+
+::: warning 应用场景
+
+* 防抖
+  * 输入框搜索联动词频繁调用接口时
+* 节流
+  * 懒加载要监听计算滚动条的位置，使用节流按一定时间的频率获取
+  * 用户点击提交按钮，假设我们知道接口大致的返回时间的情况下，我们使用节流，只允许一定时间内点击一次  
+:::
+
+如果对上面的概念还不理解，我们看下面的示例，手动操作一下
+
+* 防抖
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>防抖</title>
+</head>
+<body>
+  <button id="debounce">点我防抖！</button>
+
+  <script>
+    window.onload = function() {
+      // 1、获取这个按钮，并绑定事件
+      var myDebounce = document.getElementById("debounce");
+      myDebounce.addEventListener("click", debounce(sayDebounce));
+    }
+
+    // 2、防抖功能函数，接受传参
+    function debounce(fn) {
+      // 4、创建一个标记用来存放定时器的返回值
+      let timeout = null;
+      return function() {
+        // 5、每次当用户点击/输入的时候，把前一个定时器清除
+        clearTimeout(timeout);
+        // 6、然后创建一个新的 setTimeout，
+        // 这样就能保证点击按钮后的 interval 间隔内
+        // 如果用户还点击了的话，就不会执行 fn 函数
+        timeout = setTimeout(() => {
+          fn()
+          // fn.call(this, arguments);
+        }, 1000);
+      };
+    }
+
+    // 3、需要进行防抖的事件处理
+    function sayDebounce() {
+      // ... 有些需要防抖的工作，在这里执行
+      console.log("防抖成功！");
+    }
+
+  </script>
+</body>
+</html>
+```
+
+* 节流
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>节流</title>
+</head>
+<body>
+
+  <button id="throttle">点我节流！</button>
+
+  <script>
+    window.onload = function() {
+      // 1、获取按钮，绑定点击事件
+      var myThrottle = document.getElementById("throttle");
+      myThrottle.addEventListener("click", throttle(sayThrottle));
+    }
+
+    // 2、节流函数体
+    function throttle(fn) {
+      // 4、通过闭包保存一个标记
+      let canRun = true;
+      return function() {
+        // 5、在函数开头判断标志是否为 true，不为 true 则中断函数
+        if(!canRun) {
+          return;
+        }
+        // 6、将 canRun 设置为 false，防止执行之前再被执行
+        canRun = false;
+        // 7、定时器
+        setTimeout( () => {
+          fn.call(this, arguments);
+          // 8、执行完事件（比如调用完接口）之后，重新将这个标志设置为 true
+          canRun = true;
+        }, 1000);
+      };
+    }
+
+    // 3、需要节流的事件
+    function sayThrottle() {
+      console.log("节流成功！");
+    }
+
+  </script>
+</body>
+</html>
+```
