@@ -30,6 +30,7 @@
 * [JavaScript 工作原理](https://segmentfault.com/u/troland)
 
 ## 工具类
+* [API查询-devdocs](https://devdocs.io/)
 * [JSON在线编辑器](https://www.qqe2.com/)
 * [前端在线编辑-CodePen](https://codepen.io/dashboard/) (邮箱)
 * [在线绘图工具-ProcessOn](https://www.processon.com/diagrams)
