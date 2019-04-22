@@ -93,6 +93,12 @@ mysql -u root -p
 
 登录成功后你将会看到 Welecome to the MySQL monitor... 的提示语
 
+6. 关闭
+
+```
+net stop mysql
+```
+
 ## Navicat 安装
 
 参考博客[https://blog.csdn.net/WYpersist/article/details/79834490](https://blog.csdn.net/WYpersist/article/details/79834490)
