@@ -160,6 +160,7 @@ module.exports = {
         'github在线预览vue项目',
         'EasyMock使用',
         'MySQL和Navicat的安装',
+        '推荐好用的前端工具',
       ]
     }
   }
