@@ -131,3 +131,79 @@ data() {
   }
 },
 ```
+
+## vue-router 几种传参方式
+
+### query方法，
+
+query方法，使用path来匹配路由
+
+刷新不会丢失参数，但参数会拼接在URL上
+
+```js
+// 传参
+this.$router.push({ path: '/infoList/detail', query: { id: 306478347, carId: '086e232af7390349b27ddc70fe535a46' } })
+
+// 路由
+router.push({
+  path: '/infoList/detail',
+  name: 'detail',
+  component: infoDetail,
+  meta: {
+    title (to) {
+      return `档案详情-${to.query.id}`
+    }
+  }
+})
+```
+
+### params方法，此方法不会在URL路径中显示拼接
+
+params方法，使用路由属性中的name来确定匹配的路由
+
+但是此方法有一个缺点就是，刷新会丢失参数，如果不想刷新丢失，可以在URL上拼接参数
+
+```js
+// 传参
+this.$router.push({ name: 'detail', params: { id: 306478347, carId: '086e232af7390349b27ddc70fe535a46' } })
+
+// 路由
+router.push({
+  path: '/infoList/detail/:carId',
+  name: 'detail',
+  component: infoDetail,
+  meta: {
+    title (to) {
+      return `档案详情-${to.params.id}`
+    }
+  }
+})
+```
+
+在上面例子中，刷新页面 carId参数会保留，id参数会丢失
+
+## URL不拼接参数，刷新又不丢失参数的方法
+
+可以使用localStorage()方法缓存
+
+```js
+// 传参
+this.$router.push({ name: 'detail', params: { id: 306478347, carId: '086e232af7390349b27ddc70fe535a46' } })
+
+// 路由
+router.push({
+  path: '/infoList/detail/:carId',
+  name: 'detail',
+  component: infoDetail,
+  meta: {
+    title (to) {
+      if (to.params.id) {
+        localStorage.setItem('paramsCarId', to.params.id)
+      }
+      return `档案详情-${localStorage.getItem('paramsCarId')}`
+    }
+  }
+})
+```
+
+在上面例子中，刷新页面 carId参数和id参数都会保留，不会丢失
