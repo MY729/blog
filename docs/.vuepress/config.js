@@ -161,7 +161,8 @@ module.exports = {
         'EasyMock使用',
         'MySQL和Navicat的安装',
         '推荐好用的前端工具',
-        'vue3-node-mysql搭建blog1'
+        'vue3-node-mysql搭建blog1',
+        'vue3-node-mysql搭建blog2'
       ]
     }
   }
