@@ -11,5 +11,8 @@
     "docs:build": "vuepress build docs",
     "deploy": "bash deploy.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.0.0"
   }
 }

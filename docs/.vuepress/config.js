@@ -152,6 +152,7 @@ module.exports = {
         '常见网络题目',
         'http请求和响应报文结构',
         'TCP三次握手',
+        'http版本区别'
       ],
       // 文章
       '/article/': [
