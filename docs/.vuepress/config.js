@@ -7,6 +7,7 @@ module.exports = {
   // 注入到当前页面的 HTML <head> 中的标签
   base: '/blog/', // 这是部署到github相关的配置 下面会讲
   markdown: {
+    plugins: ['task-lists'],
     lineNumbers: true // 代码块显示行号
   },
   host: 'localhost',
@@ -64,6 +65,13 @@ module.exports = {
             '/accumulate/JavaScript/JS的堆内存和栈内存',
             '/accumulate/JavaScript/this指向',
             '/accumulate/JavaScript/深拷贝vs浅拷贝',
+          ]
+        },
+        {
+          title: "webpack",
+          collapsable: false,
+          children: [
+            '/accumulate/webpack/实践学习',
           ]
         },
         {
