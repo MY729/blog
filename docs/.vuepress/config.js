@@ -134,6 +134,8 @@ module.exports = {
           children: [
             '/interview/js基础面试/变量类型和计算',
             '/interview/js基础面试/原型和原型链',
+            '/interview/js基础面试/模块化',
+            '/interview/js基础面试/手写代码',
           ]
         },
         {

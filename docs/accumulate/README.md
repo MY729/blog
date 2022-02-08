@@ -28,6 +28,7 @@
 * [css3 3D](https://github.com/chokcoco/css3-)
 * [css3 话题](https://github.com/chokcoco/iCSS)
 * [JavaScript 工作原理](https://segmentfault.com/u/troland)
+* [前端知识每日3+1](http://www.h-camel.com/history.html)
 
 ## 工具类
 * [API查询-devdocs](https://devdocs.io/)

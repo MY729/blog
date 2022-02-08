@@ -1,4 +1,43 @@
 # 常见js面试题
+## js数据类型有哪些
+基本：number、string、boolean、undefined、null、symbol、bigint
+
+复杂：对象（object、array、function、date）
+
+#### 判断数据类型方法
+
+* typeof 只能用于判断除了null的基础类型
+
+```
+typeof null // object
+```
+
+* instanceof 只能用于判断复杂类型
+
+```
+[] instanceof Array // true
+let a = {}; a instanceof Object // true
+let a = new Date(); a instanceof Date // true
+let a = console.log; a instanceof Function // true
+
+// 基础类型检查不出来
+1 instanceof Number // false
+```
+
+* constructor
+
+> null、undefined没有construstor方法，因此constructor不能判断undefined和null
+
+```
+let a = 3; a.constructor === Number // true
+let a = 0n; a.constructor === BigInt
+```
+
+* Object.prototype.toString.call() 所有类型
+
+```
+Object.prototype.toString.call(1) === '[object Number]'// true
+```
 
 ## 如何判断一个变量是数组类型
 
@@ -318,7 +357,7 @@ b: fmy
       let timeout = null;
       return function() {
         // 5、每次当用户点击/输入的时候，把前一个定时器清除
-        clearTimeout(timeout);
+        if (timeout) clearTimeout(timeout);
         // 6、然后创建一个新的 setTimeout，
         // 这样就能保证点击按钮后的 interval 间隔内
         // 如果用户还点击了的话，就不会执行 fn 函数

@@ -131,14 +131,14 @@ promise.catch(function (error) {
 ```
 
 ### Promise.all
-Promise.all接收一个 promise对象的数组作为参数，当这个数组里的所有promise对象全部变为resolve或reject状态的时候，它才会去调用 .then 方法。
+Promise.all接收一个promise对象的数组作为参数，只要有一个promise对象返回失败，会立即抛出错误,只有数组里面的所有promise对象都执行成功才返回一个数组结果
 
 ```js
 var p = Promise.all([p1, p2, p3]);
 ```
 
 ### Promise.race
-Promise.all在接收到的所有的对象promise都变为 FulFilled 或者 Rejected 状态之后才会继续进行后面的处理， 与之相对的是Promise.race只要有一个promise对象进入 FulFilled 或者 Rejected 状态的话，就会继续进行后面的处理。
+Promise.all在接收到的所有的对象promise都变为 FulFilled 或者 存在一个Rejected 状态之后才会继续进行后面的处理， 与之相对的是Promise.race只要有一个promise对象进入 FulFilled 或者 Rejected 状态的话，就会继续进行后面的处理。
 
 ```js
 var p = Promise.race([p1, p2, p3]);

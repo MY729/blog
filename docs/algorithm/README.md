@@ -94,6 +94,23 @@ i = j = 3， 这样序列就这样分割成了两部分，左边部分{15， 30�
 
 ![An image](https://github.com/MY729/BLOG/raw/gh-pages/img/算法/快速排序.gif)
 
+```js
+function quickSort(arr) {
+    let midIndex = Math.floor(arr.length / 2)
+    let target = arr.splice(midIndex, 1)[0] // splice返回截取后的数组，改变原数组
+    let left = []
+    let right = []
+    for(let i = 0; i < arr.length; i ++) {
+        if (arr[i] < target) {
+            left.push(arr[i])
+        } else {
+            right.push(arr[i])
+        }
+    }
+    return quickSort(left).concat([target], quickSort(right))
+}
+```
+
 :::danger TODO
 https://www.cnblogs.com/roam/p/7423805.html
 :::

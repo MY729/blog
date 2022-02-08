@@ -267,7 +267,7 @@ c(1,2);
 
 **总结：** call和apply都是改变上下文中的this并立即执行这个函数，bind方法可以让对应的函数想什么时候调就什么时候调用，并且可以将参数在执行的时候添加，这是它们的区别
 
-## 剪头函数
+## 箭头函数
 
 ::: tip 知识点
 ES6 的箭头函数是可以避免 ES5 中使用 this 的坑的。箭头函数的 this 始终指向函数定义时的 this，而非执行时。
@@ -300,7 +300,7 @@ a.func2() // this.func1 is not a function
 
 所以上例在不使用箭头函数的情况下，是会报错的，因为最后调用 setTimeout 的对象是 window，但是在 window 中并没有 func1 函数
 
-使用剪头函数：
+使用箭头函数：
 ```js
 var name = "windowsName"
 var a = {
