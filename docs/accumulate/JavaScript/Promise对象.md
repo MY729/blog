@@ -22,12 +22,11 @@ promise是异步编程的一种解决方案，解决了回调地狱的问题
 2. 不设置回调函数，promise内部抛出的错误就无法返回外部
 3. 当状态处于pending时，无法知道当前处于什么阶段（刚开始还是已结束）
 
+## API
 
 ## 手写promise
 
 [手写promise](/interview/js基础面试/手写代码.html#手写promise)
-
-## API
 
 ### promise.then
 then 必须返回一个promise。也是因为这个规范，所以 promise 支持「链式调用」。
