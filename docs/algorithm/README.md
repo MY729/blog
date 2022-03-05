@@ -114,3 +114,27 @@ function quickSort(arr) {
 :::danger TODO
 https://www.cnblogs.com/roam/p/7423805.html
 :::
+
+
+### 三路快排
+
+三路快速排序是快速排序的的一个优化版本， 将数组分成三段， 即小于基准元素、 等于 基准元素和大于基准元素， 这样可以比较高效的处理数组中存在相同元素的情况,其它特征与快速排序基本相同。
+
+```js
+function threeSort(arr) {
+  if (arr.length === 0) return []
+  let left = []
+  let right = []
+  let center = []
+  let pivot = arr[0]
+  for(var i = 0; i < arr.length; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i])
+    } else if (arr[i] == pivot) {
+      cneter.push(arr[i])
+    } else {
+      right.push(arr[i])
+    }
+  }
+  return [...threeSort(left), ...center, ...threeSort(right)]
+}
