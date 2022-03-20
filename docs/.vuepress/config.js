@@ -163,7 +163,8 @@ module.exports = {
         //     '/interview/HTML+CSS',
         //   ]
         // },
-        '/interview/HTML+CSS'
+        '/interview/HTML+CSS',
+        '/interview/vue',
       ],
       // 网络
       '/internetwork/': [
