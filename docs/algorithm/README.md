@@ -96,6 +96,7 @@ i = j = 3， 这样序列就这样分割成了两部分，左边部分{15， 30�
 
 ```js
 function quickSort(arr) {
+    if (arr.length < 2) return arr
     let midIndex = Math.floor(arr.length / 2)
     let target = arr.splice(midIndex, 1)[0] // splice返回截取后的数组，改变原数组
     let left = []
