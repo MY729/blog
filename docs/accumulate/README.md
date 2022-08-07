@@ -1,10 +1,4 @@
 # 前言
-:::danger 近期学习内容
-**javascript高级程序设计**
-* 时间：2019年1月-4月  
-**HTTP权威指南**
-* 时间：2019年1月-4月
-:::
 
 ## 前端周刊类地址
   * [掘金](https://juejin.im/explore/frontend)
