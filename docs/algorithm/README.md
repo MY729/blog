@@ -37,22 +37,37 @@ console.log('排序后: ', bubbleSort(arr)) // 排序后: [2, 4, 8, 9, 10, 12]
 ![An image](https://github.com/MY729/BLOG/raw/gh-pages/img/算法/选择排序.gif)  
 
 ```js
+/**
+ * 算法描述：
+  首先在未排序序列中找到最小(大)元素，存放到排序序列的起始位置
+  再从剩余未排序元素中继续寻找最小(大)元素，然后放到已排序序列的末尾
+  重复第二步，直到所有元素均排序完毕
+  时间复杂度：平均、最好、最坏都是O(n^2)
+  空间复杂度：O(1)
+ * @param {*} arr
+ * @returns
+ */
 function selectSort(arr) {
-  var len = arr.length
-  for (var i = 0; i < len - 1; i++) {
-    for (var j = i + 1; j < len; j++) {
-      if (arr[i] > arr[j]) {
-        var minNum = arr[j]
-        arr[j] = arr[i]
-        arr[i] = minNum
+  const len = arr.length
+  let minIndex
+  for(let i = 0; i < len - 1; i++) {
+    minIndex = i
+    for(let j = i + 1; j < len; j++) {
+      if(arr[j] < arr[minIndex]) {
+        minIndex = j
       }
+    }
+    if(i !== minIndex) {
+      const temp = arr[i]
+      arr[i] = arr[minIndex]
+      arr[minIndex] = temp
     }
   }
   return arr
 }
-var arr = [10, 8, 12, 9, 2, 4]
-console.log('排序前: ', arr) // 排序前: [10, 8, 12, 9, 2, 4]
-console.log('排序后: ', selectSort(arr)) // 排序后: [2, 4, 8, 9, 10, 12]
+
+const arr = [2, 4, 6, 1, 3]
+console.log(selectSort(arr))
 ```
 
 ## 插入排序
